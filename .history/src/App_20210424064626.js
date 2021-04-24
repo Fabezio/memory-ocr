@@ -71,7 +71,7 @@ class App extends Component {
             key={index}
             index={index}
             card={card}
-            feedback={this.getFeedbackForCard(index)}
+            feedback={this.getFeedbackForCard(i)}
             onClick={this.handleCardClick}
           />
         ))}

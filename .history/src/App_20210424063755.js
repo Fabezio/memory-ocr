@@ -45,19 +45,8 @@ class App extends Component {
   }
 
   // fonction callback: binding/* */
-  handleCardClick = index => {
-    const { currentPair } = this.state
-
-    if (currentPair.length === 2) {
-      return
-    }
-
-    if (currentPair.length === 0) {
-      this.setState({ currentPair: [index] })
-      return
-    }
-
-    this.handleNewPairClosedBy(index)
+  handleCardClick = card => {
+    console.log(card, 'clicked', this)
   }
 
   render () {
@@ -66,12 +55,11 @@ class App extends Component {
     return (
       <div className='memory'>
         <GuessCount guesses={guesses} />
-        {cards.map((card, index) => (
+        {cards.map((card, i) => (
           <Card
-            key={index}
-            index={index}
+            key={i}
             card={card}
-            feedback={this.getFeedbackForCard(index)}
+            feedback='visible'
             onClick={this.handleCardClick}
           />
         ))}

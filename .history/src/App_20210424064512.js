@@ -66,12 +66,12 @@ class App extends Component {
     return (
       <div className='memory'>
         <GuessCount guesses={guesses} />
-        {cards.map((card, index) => (
+        {cards.map((card, i) => (
           <Card
-            key={index}
+            key={i}
             index={index}
             card={card}
-            feedback={this.getFeedbackForCard(index)}
+            feedback={this.getFeedbackForCard(i)}
             onClick={this.handleCardClick}
           />
         ))}
